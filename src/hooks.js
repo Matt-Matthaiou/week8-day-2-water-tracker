@@ -1,27 +1,19 @@
 
-import React, {useState, useEffect} from 'react';
+import {useState, useEffect} from 'react';
 
-export const UserToggle = (value) => {
+export const UserToggle = () => {
 
-    const [newValue, setNewValue] = useState(null);
+    const [value, setValue] = useState(false);
 
+    const changeValue = () => {
+        setValue(!value);
+    }
 
-    const handleToggle = () => {
+    useEffect( () => {
+        changeValue();
+    }, []);
 
-            if (value === false) {
-                setNewValue(true);
-            } else {
-                setNewValue(false);
-            }
-        }
-
-
-        useEffect( () => {
-            handleToggle();
-        }, [value]);
-
-        return newValue
-
+    return [value, changeValue];
 };
 
 
