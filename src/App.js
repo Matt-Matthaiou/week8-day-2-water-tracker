@@ -4,17 +4,18 @@ import {UserToggle} from './hooks';
 
 function App() {
 
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  // const [isDarkMode, setIsDarkMode] = useState(false);
+  let currentMode = UserToggle(true);
 
   const toggleDarkMode = () => {
-    setIsDarkMode(!isDarkMode);
+    currentMode =UserToggle(currentMode);
   }
 
   // UserToggle(isDarkMode)
 
 
   return (
-    <div className={isDarkMode ? "dark" : "light"}>
+    <div className={currentMode ? "dark" : "light"}>
       <button onClick={toggleDarkMode}>Dark/Light</button>
       <MainPage />
     </div>

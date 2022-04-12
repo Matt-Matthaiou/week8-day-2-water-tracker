@@ -1,26 +1,26 @@
 
 import React, {useState, useEffect} from 'react';
 
-export const UserToggle = () => {
+export const UserToggle = (value) => {
 
-    const [value, setValue] = useState(false);
+    const [newValue, setNewValue] = useState(null);
 
 
     const handleToggle = () => {
 
             if (value === false) {
-                setValue(true);
+                setNewValue(true);
             } else {
-                setValue(false);
+                setNewValue(false);
             }
         }
 
 
         useEffect( () => {
             handleToggle();
-        });
+        }, [value]);
 
-        return value
+        return newValue
 
 };
 
