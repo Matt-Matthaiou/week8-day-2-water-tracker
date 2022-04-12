@@ -4,6 +4,8 @@ import Modal from 'react-modal';
 import '../App.css';
 import Header from '../components/Header';
 import TrackerContainer from '../containers/TrackerContainer';
+import UserContext from '../context/UserContext';
+import { UserToggle } from '../hooks';
 
 const MainPage = () => {
 
@@ -23,6 +25,13 @@ const MainPage = () => {
         setIsModalOpen(!isModalOpen);
       }
 
+//    let isDarkMode = UserToggle();
+
+//    const handleClick = ()=>
+//    {
+//        UserToggle();
+//    }
+
     return (
         <>
             <Modal
@@ -38,8 +47,11 @@ const MainPage = () => {
                 <button onClick={toggleModal}>OK</button>
             </Modal>
 
-            <Header name={name}/>
-            <TrackerContainer name={name} goal={goal} />
+            <UserContext.Provider value={ { name, goal } } >
+                <Header />
+                <TrackerContainer />
+            </UserContext.Provider>
+
         </>
     )
 }

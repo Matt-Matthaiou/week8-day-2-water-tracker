@@ -21,7 +21,7 @@ const TrackerContainer = ({name, goal}) => {
 
     return (
         <>
-            <TrackerDisplay glasses={glasses} name={name} goal={goal} />
+            <TrackerDisplay glasses={glasses}/>
             <FormContainer handleUpdate={handleUpdate} handleEmpty={handleEmpty} />
         </>
     )

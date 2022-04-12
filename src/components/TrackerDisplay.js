@@ -1,6 +1,10 @@
 import PieChart from './PieChart';
+import { useContext } from 'react';
+import UserContext from '../context/UserContext';
 
-const TrackerDisplay = ({glasses, name, goal}) => {
+const TrackerDisplay = ({glasses}) => {
+
+    const {name, goal} = useContext(UserContext);
 
     return (
         <>

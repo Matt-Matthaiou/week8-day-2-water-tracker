@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import MainPage from './pages/MainPage';
+import {UserToggle} from './hooks';
 
 function App() {
 
@@ -8,6 +9,9 @@ function App() {
   const toggleDarkMode = () => {
     setIsDarkMode(!isDarkMode);
   }
+
+  // UserToggle(isDarkMode)
+
 
   return (
     <div className={isDarkMode ? "dark" : "light"}>
